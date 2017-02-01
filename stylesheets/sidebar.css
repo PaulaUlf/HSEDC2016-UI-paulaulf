@@ -9,21 +9,29 @@
   overflow: hidden;
 }
 
-.sidebarMenu{
+.sidebarMenu {
   width: calc(100% + 20px);
   height: 100%;
-  padding-right: 20px;
   overflow-y: scroll;
 }
 
+.sidebarMenuItem {
+  position: relative;
+  height: 50px;
+}
+
+.sidebarMenuItem:hover {
+
+}
 .sidebarMenuItem:hover .sidebarSubmenu {
 display: block;
 }
 
 .sidebarMenuItem > div {
+  position: relative;
   width: 300px;
   height: 50px;
-  padding: 10px;
+  padding: 10px 10px 10px 70px;
   line-height: 30px;
 }
 
@@ -40,10 +48,55 @@ display: block;
 
 .sidebarSubmenuItem {
   height: 50px;
-  padding: 10px 10px 10px 20px;
+  padding: 10px 10px 10px 60px;
   line-height: 30px;
 }
 
 .sidebarSubmenuItem:hover {
-  background: gray;
+  background: blue;
 }
+
+.sidebarSubmenuItem:first-child {
+  display: none;
+}
+
+.sidebarMenuItem:last-child {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.sidebarMenuItem::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+  font-family: FontAwesome;
+  text-align: center;
+}
+
+
+
+.sidebarMenuItem.heart::before {content: '\f08a';}
+
+.sidebarMenuItem.hashtag::before {content: '\f292';}
+
+.sidebarMenuItem.bolt::before {content: '\f0e7';}
+
+.sidebarMenuItem.paw::before {content: '\f1b0';}
+
+.sidebarMenuItem.rocket::before {content: '\f135';}
+
+.sidebarMenuItem.starhalf::before {content: '\f123';}
+
+.sidebarMenuItem.snowflake::before {content: '\f2dc';}
+
+.sidebarMenuItem.meh::before {content: '\f11a';}
+
+.sidebarMenuItem.hourglass::before {content: '\f253';}
+
+.sidebarMenuItem.flask::before {content: '\f0c3';}
